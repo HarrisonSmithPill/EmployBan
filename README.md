@@ -1,2 +1,2 @@
 # EmployBan
-"weed cat"
+""
