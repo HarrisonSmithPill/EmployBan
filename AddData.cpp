@@ -6,7 +6,7 @@ AddData :: AddData :
    fFName("null");
   fSName("null");
   fDOB("null");
-  fID(0);
+  fID(000 0000);
 {}
 
 AddData :: ~AddData
@@ -39,8 +39,37 @@ AddData :: ~AddData
     return fID;
   }
   
-  const char AddData :: insertProduct(const char fproductHistory[]);
+  const char AddData :: insertProduct(const char fproductHistory[], char fProduct,int fsize);
   {
+
+     fProduct >> fproductHistory[fsize+1];
+     
+  }
+
+
+  const int AddData :: updateAge(int fupdate) const
+  {
+    fAge = fupdate;
+  }
+  
+  const char AddData :: updateFName(char fupdate) const;
+  {
+     fFName = fupdate;
+  }
+  
+  const char AddData ::updateLName(char fupdate) const;
+  {
+     fLName = fupdate;
+  }
+  
+  const char AddData :: updateDOB(char fupdate) const;
+  {
+    fDOB = fupdate;
+  }
+  
+  const int AddData :: updateID(int fupdate) const;
+  {
+     fID = fupdate;
   }
   
 
