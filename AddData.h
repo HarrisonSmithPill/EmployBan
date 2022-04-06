@@ -32,14 +32,14 @@ class AddData
   
   const char insertProduct(const char fproductHistory[], char fProduct);
   
-  const int updateAge() const;
+  const int updateAge(int fupdate) const;
   
-  const char updateFName() const;
+  const char updateFName(char fupdate) const;
   
-  const char updateLName() const;
+  const char updateLName(char fupdate) const;
   
-  const char updateDOB() const;
+  const char updateDOB(char fupdate) const;
   
-  const int updateID() const;
+  const int updateID(int fupdate) const;
 
 }
