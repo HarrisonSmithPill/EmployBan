@@ -16,7 +16,7 @@ class AddData
   
   public:
   
-  AddData(int fAge = 0, char fFName = "null", char fLName = "null", char fDOB = "null", int fID = 000000,);
+  AddData();
   
   ~AddData(){}
   
@@ -32,6 +32,6 @@ class AddData
   
   const char insertProduct(const char fproductHistory[]);
   
-  const char printInfo() const;
+
 
 }
