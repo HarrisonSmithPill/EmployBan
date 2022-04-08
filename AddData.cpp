@@ -1,4 +1,5 @@
 namespace std;
+namespace fstream;
 #using "AddData.h"
 
 AddData :: AddData :
