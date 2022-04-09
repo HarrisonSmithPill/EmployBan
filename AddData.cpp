@@ -20,7 +20,7 @@ AddData :: ~AddData
 /////////////////////////////////////////////////
 
 if OrderSelect == 0;
-
+{
 const int AddData::getAge() const
 {
     return fAge;
@@ -45,12 +45,13 @@ const char AddData::getLName() const;
 const int AddData::getID() const;
 {
     return fID;
+}
 }
 
 /////////////////////////////////////////////////
 
 if OrderSelect == 1;
-
+{
 const char AddData::getFName() const;
 {
     return fFName;
@@ -74,12 +75,13 @@ const char AddData::getDOB() const;
 const int AddData::getID() const;
 {
     return fID;
+}
 }
 
 /////////////////////////////////////////////////
 
 if OrderSelect == 2;
-
+{
 const int AddData::getID() const;
 {
     return fID;
@@ -105,6 +107,7 @@ const char AddData::getDOB() const;
     return fDOB;
 }
 
+}
 
 /////////////////////////////////////////////////
 
