@@ -14,6 +14,7 @@ private:
 	char fDOB;
 	int fID;
 	int OrderSelect;
+	int OrderType;
 
 
 public:
