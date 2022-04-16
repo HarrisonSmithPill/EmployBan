@@ -1,147 +1,84 @@
-namespace std;
-namespace fstream;
-#using "AddData.h"
+using namespace std;
+#include <string>
+#include "BaseData.h"
 
-AddData::AddData :
-fAge(0);
-fFName("null");
-fSName("null");
-fDOB("null");
-fID(000 0000);
-OrderSelect(0);
-OrderType(0);
-{}
-
-AddData :: ~AddData
+BaseData :: BaseData() :
+	fAge(19),
+	fID(10),
+	OrderSelect(0),
+	OrderType(0),
+	listSize(0)
 {
-  delete[]  fAge, fFName, fSName, fDOB, fID;
-}
-
-/////////////////////////////////////////////////
-
-if OrderSelect == 0;
-{
-const int AddData::getAge() const
-{
-    return fAge;
-}
-
-const char AddData::getDOB() const;
-{
-    return fDOB;
-}
-
-const char AddData::getFName() const;
-{
-    return fFName;
-}
-
-const char AddData::getLName() const;
-{
-    return fLName;
+	fFName = "weed";
+	fSName = "cat";
+	fDOB = "10/10/2010";
+	fHList[listSize];
 }
 
 
-const int AddData::getID() const;
+
+
+const int BaseData::getAge() const
 {
-    return fID;
+	return fAge;
 }
-}
-
-/////////////////////////////////////////////////
-
-if OrderSelect == 1;
+const int BaseData::getID() const
 {
-const char AddData::getFName() const;
+	return fID;
+}
+
+const std::string BaseData::getFName() const
 {
-    return fFName;
+	return fFName;
 }
 
-const char AddData::getLName() const;
+const std::string BaseData::getSName() const
 {
-    return fLName;
+	return fSName;
 }
 
-const int AddData::getAge() const
+
+const std::string BaseData::getDOB() const
 {
-    return fAge;
+	return fDOB;
 }
 
-const char AddData::getDOB() const;
+ std::string BaseData::getHList(int i) 
 {
-    return fDOB;
+	return fHList[i];
 }
 
-const int AddData::getID() const;
+
+
+ void BaseData::updateAge(int fupdate)
 {
-    return fID;
-}
-}
-
-/////////////////////////////////////////////////
-
-if OrderSelect == 2;
-{
-const int AddData::getID() const;
-{
-    return fID;
+	 fAge = fupdate;
 }
 
-const char AddData::getFName() const;
-{
-    return fFName;
-}
+ void BaseData::updateID(int fupdate)
+ {
+	 fID = fupdate;
+ }
 
-const char AddData::getLName() const;
-{
-    return fLName;
-}
+ void BaseData::updateFName(std::string fupdate)
+ {
+	 fFName = fupdate;
+ }
 
-const int AddData::getAge() const
-{
-    return fAge;
-}
+ void BaseData::updateSName(std::string fupdate)
+ {
+	 fSName = fupdate;
+ }
 
-const char AddData::getDOB() const;
-{
-    return fDOB;
-}
-
-}
-
-/////////////////////////////////////////////////
+ void BaseData::updateDOB(std::string fupdate)
+ {
+	 fDOB = fupdate;
+ }
 
 
-const char AddData::insertProduct(const char fproductHistory[], char fProduct, int fsize);
-{
+void BaseData :: insertProduct( std::string fproduct)
+ { 
 
-    fProduct >> fproductHistory[fsize + 1];
-
-}
-
-
-const int AddData::updateAge(int fupdate) const
-{
-    fAge = fupdate;
-}
-
-const char AddData::updateFName(char fupdate) const;
-{
-    fFName = fupdate;
-}
-
-const char AddData::updateLName(char fupdate) const;
-{
-    fLName = fupdate;
-}
-
-const char AddData::updateDOB(char fupdate) const;
-{
-    fDOB = fupdate;
-}
-
-const int AddData::updateID(int fupdate) const;
-{
-    fID = fupdate;
-}
-
+		listSize = listSize + 1;
+		fHList[listSize] = fproduct;
+ }
