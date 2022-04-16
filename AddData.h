@@ -1,48 +1,35 @@
 #pragma once
-
-#include <iostream>
 #include <string>
-#include <fstream>
-
-class AddData
+class BaseData
 {
 private:
-
 	int fAge;
-	char fFName;
-	char fSName;
-	char fDOB;
 	int fID;
 	int OrderSelect;
 	int OrderType;
-
-
+	int listSize;
+	std::string fFName;
+	std::string fSName;
+	std::string fDOB;
+	std::string fHList[10];
 public:
 
-	AddData();
+	BaseData();
 
-	~AddData() {}
 
 	const int getAge() const;
-
-	const char getFName() const;
-
-	const char getLName() const;
-
-	const char getDOB() const;
-
 	const int getID() const;
+	const std::string getFName() const;
+	const std::string getSName() const;
+	const std::string getDOB() const;
+	std::string getHList(int i);
 
-	const char insertProduct(const char fproductHistory[], char fProduct, int fsize);
 
-	const int updateAge(int fupdate) const;
+	void updateAge(int fupdate);
+	void updateID(int fupdate);
+	void updateFName(std::string fupdate);
+	void updateSName(std::string fupdate);
+	void updateDOB(std::string fupdate);
 
-	const char updateFName(char fupdate) const;
-
-	const char updateLName(char fupdate) const;
-
-	const char updateDOB(char fupdate) const;
-
-	const int updateID(int fupdate) const;
-
-}
+	void insertProduct(std::string fproduct);
+};
