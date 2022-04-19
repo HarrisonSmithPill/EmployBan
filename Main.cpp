@@ -1,83 +1,82 @@
-#include<iostream>
-#include"BaseData.h"
-#include <string>
+#include <iostream>
+#include "Member.h"
+
 using namespace std;
-int main()
-{
-    BaseData BD;
-    int intUpdate;
-    string stringUpdate;
 
-    /////////////////////////////////////////////
-    cout << "Hello world" << endl;
-    /////////////////////////////////////////////
+int main() {
+	int ID, option;
+	string ans, change;
 
-    cout << "age ";
-    cout << BD.getAge() << endl;
+	Member *test = new Member(10, "John", "Jones", "18/5/1995");
+	test->display();
 
+	//Member* new1 = new Member(0, "null", "null", "null");
+	//new1->display();
 
-    cout << "update age:" << endl;
-    cin >> intUpdate;
-    BD.updateAge(intUpdate);
-    cout << "new age ";
-    cout << BD.getAge() << endl;
+	do {
+		cout << "Please enter your ID: " << endl;
+		cin >> ID;
+		if (test->verify(ID) == true) {
+			do {
+				cout << "Current Member details: " << endl;
+				test->display();
+				cout << "Would you like to change your details?" << endl;
+				cin >> ans;
+				if (ans == "yes" || ans == "y") {
+					do {
+						cout << "What details would you like to change?" << endl;
+						cout << "1. Age" << "\n" << "2. First Name" << "\n" << "3. Last Name" << "\n" << "4. Date of Birth" << "\n" << "5. Exit" << endl;
+						cin >> option;
 
-    /////////////////////////////////////////////
-    cout << "ID ";
-    cout << BD.getID() << endl;
+						switch (option) {
+						case 1:
+							cout << "Please enter your age: " << endl;
+							break;
 
+						case 2:
+							cout << "Please enter your First Name: ";
+							cin >> change;
+							test->ChangeFName(change);
+							break;
 
-    cout << "update ID:" << endl;
-    cin >> intUpdate;
-    BD.updateID(intUpdate);
-    cout << "new ID ";
-    cout << BD.getID() << endl;
+						case 3:
+							cout << "Please enter your Last Name: ";
+							cin >> change;
+							test->ChangeLName(change);
+							break;
 
-    /////////////////////////////////////////////
+						case 4:
+							cout << "Please enter your Date of Birth: " << "\n";
+							cin >> change;
+							test->ChangeDOB(change);
+							break;
 
-    cout << "FIRST NAME ";
-    cout << BD.getFName() << endl;
+						default:
+							cout << "Changes have been saved!" << endl;
+							cout << "Updated details: " << endl;
+							test->display();
+							cout << "Have a nice day!" << endl;
+							break;
+						}
 
-    cout << "update first name:" << endl;
-    cin >> stringUpdate;
-    BD.updateFName(stringUpdate);
-    cout << "new frist name ";
-    cout << BD.getFName() << endl;
+						cout << "Would you like to change any other details?" << endl;
+						cin >> ans;
 
-    /////////////////////////////////////////////
+					} while (ans != "no");
+				}
+			} while (ans != "yes" && ans != "no");
 
-    cout << "SURNAME NAME ";
-    cout << BD.getSName() << endl;
+		}
+		else {
+			cout << "Invalid ID number!" << endl;
+			cout << "Please try again!" << endl;
+		}
+	} while (test->verify(ID) != true);
 
-    cout << "update surname name:" << endl;
-    cin >> stringUpdate;
-    BD.updateSName(stringUpdate);
-    cout << "new surname name ";
-    cout << BD.getSName() << endl;
+	cout << "Changes have been saved!" << endl;
+	cout << "Updated details: " << endl;
+	test->display();
+	cout << "Have a nice day!" << endl;
 
-
-    /////////////////////////////////////////////
-
-    cout << "DOB ";
-    cout << BD.getDOB() << endl;
-
-    cout << "update DOB:" << endl;
-    cin >> stringUpdate;
-    BD.updateDOB(stringUpdate);
-    cout << "new DOB ";
-    cout << BD.getDOB() << endl;
-
-    /////////////////////////////////////////////
-
-    cout << "HList ";
-    cin >> stringUpdate;
-    BD.insertProduct(stringUpdate);
-    cout << BD.getHList(1) << endl;
-
-    cout << "2HList ";
-    cin >> stringUpdate;
-    BD.insertProduct(stringUpdate);
-    cout << BD.getHList(2) << endl;
-    cout << BD.getHList(1) << endl;
-    return 0;
+	return 0;
 }
