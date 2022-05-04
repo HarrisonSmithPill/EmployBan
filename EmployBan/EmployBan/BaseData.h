@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include "Sales.h"
+#include <vector>
 class BaseData
 {
 private:
@@ -12,10 +14,11 @@ private:
 	std::string fSName;
 	std::string fDOB;
 	std::string fHList[10];
+	vector<Sales> fsales;
 public:
 
-	BaseData();
-
+	BaseData(int id, string Fname, string Sname, int age, string dob);                                
+	        
 
 	const int getAge() const;
 	const int getID() const;
@@ -24,12 +27,16 @@ public:
 	const std::string getDOB() const;
 	std::string getHList(int i);
 
+	bool verify(int check);
 
 	void updateAge(int fupdate);
 	void updateID(int fupdate);
 	void updateFName(std::string fupdate);
 	void updateSName(std::string fupdate);
 	void updateDOB(std::string fupdate);
+	void display();
 
 	void insertProduct(std::string fproduct);
+	void Add_Sales(string name,float price, string date);
+	void Dispaly_sales();
 };
