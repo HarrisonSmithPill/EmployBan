@@ -38,9 +38,13 @@ namespace CppCLRWinFormsProject {
 	protected:
 	private: System::Windows::Forms::TextBox^ RemoveMemberLabel2;
 	private: System::Windows::Forms::TextBox^ RemoveMemberLabel1;
-	private: System::Windows::Forms::TextBox^ DisplaySalesTB;
-	private: System::Windows::Forms::TextBox^ DisplayMembersTB;
-	private: System::Windows::Forms::TextBox^ DisplayMembersOrSalesLabel;
+	private: System::Windows::Forms::TextBox^ DisplaySalesTB1;
+	private: System::Windows::Forms::TextBox^ DisplayMembersTB2;
+
+
+	private: System::Windows::Forms::TextBox^ DisplayMembersTB1;
+
+
 	private: System::Windows::Forms::TextBox^ DateOfBirthTB;
 	private: System::Windows::Forms::TextBox^ IDTB;
 	private: System::Windows::Forms::TextBox^ AgeTB;
@@ -64,6 +68,8 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ EnterNewMemberLabel;
 	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ DisplaySalesTB2;
+
 
 	private:
 		/// <summary>
@@ -81,9 +87,9 @@ namespace CppCLRWinFormsProject {
 			this->RemoveMemberTB = (gcnew System::Windows::Forms::TextBox());
 			this->RemoveMemberLabel2 = (gcnew System::Windows::Forms::TextBox());
 			this->RemoveMemberLabel1 = (gcnew System::Windows::Forms::TextBox());
-			this->DisplaySalesTB = (gcnew System::Windows::Forms::TextBox());
-			this->DisplayMembersTB = (gcnew System::Windows::Forms::TextBox());
-			this->DisplayMembersOrSalesLabel = (gcnew System::Windows::Forms::TextBox());
+			this->DisplaySalesTB1 = (gcnew System::Windows::Forms::TextBox());
+			this->DisplayMembersTB2 = (gcnew System::Windows::Forms::TextBox());
+			this->DisplayMembersTB1 = (gcnew System::Windows::Forms::TextBox());
 			this->DateOfBirthTB = (gcnew System::Windows::Forms::TextBox());
 			this->IDTB = (gcnew System::Windows::Forms::TextBox());
 			this->AgeTB = (gcnew System::Windows::Forms::TextBox());
@@ -107,11 +113,12 @@ namespace CppCLRWinFormsProject {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->EnterNewMemberLabel = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->DisplaySalesTB2 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// RemoveMemberTB
 			// 
-			this->RemoveMemberTB->Location = System::Drawing::Point(191, 212);
+			this->RemoveMemberTB->Location = System::Drawing::Point(194, 212);
 			this->RemoveMemberTB->Name = L"RemoveMemberTB";
 			this->RemoveMemberTB->Size = System::Drawing::Size(100, 20);
 			this->RemoveMemberTB->TabIndex = 40;
@@ -122,7 +129,7 @@ namespace CppCLRWinFormsProject {
 			this->RemoveMemberLabel2->Enabled = false;
 			this->RemoveMemberLabel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->RemoveMemberLabel2->Location = System::Drawing::Point(179, 185);
+			this->RemoveMemberLabel2->Location = System::Drawing::Point(182, 185);
 			this->RemoveMemberLabel2->Multiline = true;
 			this->RemoveMemberLabel2->Name = L"RemoveMemberLabel2";
 			this->RemoveMemberLabel2->Size = System::Drawing::Size(911, 273);
@@ -136,52 +143,52 @@ namespace CppCLRWinFormsProject {
 			this->RemoveMemberLabel1->Enabled = false;
 			this->RemoveMemberLabel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->RemoveMemberLabel1->Location = System::Drawing::Point(178, 153);
+			this->RemoveMemberLabel1->Location = System::Drawing::Point(181, 153);
 			this->RemoveMemberLabel1->Multiline = true;
 			this->RemoveMemberLabel1->Name = L"RemoveMemberLabel1";
 			this->RemoveMemberLabel1->Size = System::Drawing::Size(911, 305);
 			this->RemoveMemberLabel1->TabIndex = 38;
 			this->RemoveMemberLabel1->Text = L"Remove A Member:";
 			// 
-			// DisplaySalesTB
+			// DisplaySalesTB1
 			// 
-			this->DisplaySalesTB->BackColor = System::Drawing::SystemColors::MenuBar;
-			this->DisplaySalesTB->Enabled = false;
-			this->DisplaySalesTB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DisplaySalesTB1->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->DisplaySalesTB1->Enabled = false;
+			this->DisplaySalesTB1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DisplaySalesTB->Location = System::Drawing::Point(179, 185);
-			this->DisplaySalesTB->Multiline = true;
-			this->DisplaySalesTB->Name = L"DisplaySalesTB";
-			this->DisplaySalesTB->Size = System::Drawing::Size(911, 273);
-			this->DisplaySalesTB->TabIndex = 37;
-			this->DisplaySalesTB->Text = L"Member: John Doe\r\nItems: Milk, Eggs, Bread, etc.";
+			this->DisplaySalesTB1->Location = System::Drawing::Point(181, 185);
+			this->DisplaySalesTB1->Multiline = true;
+			this->DisplaySalesTB1->Name = L"DisplaySalesTB1";
+			this->DisplaySalesTB1->Size = System::Drawing::Size(911, 273);
+			this->DisplaySalesTB1->TabIndex = 37;
+			this->DisplaySalesTB1->Text = L"Member: John Doe\r\nItems: Milk, Eggs, Bread, etc.";
 			// 
-			// DisplayMembersTB
+			// DisplayMembersTB2
 			// 
-			this->DisplayMembersTB->BackColor = System::Drawing::SystemColors::MenuBar;
-			this->DisplayMembersTB->Enabled = false;
-			this->DisplayMembersTB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DisplayMembersTB2->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->DisplayMembersTB2->Enabled = false;
+			this->DisplayMembersTB2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DisplayMembersTB->Location = System::Drawing::Point(180, 185);
-			this->DisplayMembersTB->Multiline = true;
-			this->DisplayMembersTB->Name = L"DisplayMembersTB";
-			this->DisplayMembersTB->Size = System::Drawing::Size(911, 273);
-			this->DisplayMembersTB->TabIndex = 36;
-			this->DisplayMembersTB->Text = L"ID: 10\r\nMember: John Doe\r\nAge: 24\r\nDate of Birth: 24/04/2000";
+			this->DisplayMembersTB2->Location = System::Drawing::Point(181, 185);
+			this->DisplayMembersTB2->Multiline = true;
+			this->DisplayMembersTB2->Name = L"DisplayMembersTB2";
+			this->DisplayMembersTB2->Size = System::Drawing::Size(911, 273);
+			this->DisplayMembersTB2->TabIndex = 36;
+			this->DisplayMembersTB2->Text = L"ID: 10\r\nMember: John Doe\r\nAge: 24\r\nDate of Birth: 24/04/2000";
 			// 
-			// DisplayMembersOrSalesLabel
+			// DisplayMembersTB1
 			// 
-			this->DisplayMembersOrSalesLabel->BackColor = System::Drawing::SystemColors::MenuBar;
-			this->DisplayMembersOrSalesLabel->Cursor = System::Windows::Forms::Cursors::Default;
-			this->DisplayMembersOrSalesLabel->Enabled = false;
-			this->DisplayMembersOrSalesLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->DisplayMembersOrSalesLabel->Location = System::Drawing::Point(179, 153);
-			this->DisplayMembersOrSalesLabel->Multiline = true;
-			this->DisplayMembersOrSalesLabel->Name = L"DisplayMembersOrSalesLabel";
-			this->DisplayMembersOrSalesLabel->Size = System::Drawing::Size(912, 305);
-			this->DisplayMembersOrSalesLabel->TabIndex = 35;
-			this->DisplayMembersOrSalesLabel->Text = L"Current Members:\r\n";
+			this->DisplayMembersTB1->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->DisplayMembersTB1->Cursor = System::Windows::Forms::Cursors::Default;
+			this->DisplayMembersTB1->Enabled = false;
+			this->DisplayMembersTB1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->DisplayMembersTB1->Location = System::Drawing::Point(180, 153);
+			this->DisplayMembersTB1->Multiline = true;
+			this->DisplayMembersTB1->Name = L"DisplayMembersTB1";
+			this->DisplayMembersTB1->Size = System::Drawing::Size(912, 305);
+			this->DisplayMembersTB1->TabIndex = 35;
+			this->DisplayMembersTB1->Text = L"Current Members:\r\n";
 			// 
 			// DateOfBirthTB
 			// 
@@ -317,6 +324,7 @@ namespace CppCLRWinFormsProject {
 			this->ExitBN->TabIndex = 20;
 			this->ExitBN->Text = L"Exit";
 			this->ExitBN->UseVisualStyleBackColor = true;
+			this->ExitBN->Click += gcnew System::EventHandler(this, &Form1::ExitBN_Click);
 			// 
 			// RemoveMemberBN
 			// 
@@ -329,6 +337,7 @@ namespace CppCLRWinFormsProject {
 			this->RemoveMemberBN->TabIndex = 19;
 			this->RemoveMemberBN->Text = L"Remove Member";
 			this->RemoveMemberBN->UseVisualStyleBackColor = false;
+			this->RemoveMemberBN->Click += gcnew System::EventHandler(this, &Form1::RemoveMemberBN_Click);
 			// 
 			// AddSalesBN
 			// 
@@ -379,6 +388,7 @@ namespace CppCLRWinFormsProject {
 			this->AddMemberBN->TabIndex = 15;
 			this->AddMemberBN->Text = L"Add Member";
 			this->AddMemberBN->UseVisualStyleBackColor = false;
+			this->AddMemberBN->Click += gcnew System::EventHandler(this, &Form1::AddMemberBN_Click);
 			// 
 			// SearchMemberBN
 			// 
@@ -393,6 +403,7 @@ namespace CppCLRWinFormsProject {
 			this->SearchMemberBN->TabIndex = 14;
 			this->SearchMemberBN->Text = L"Search Member";
 			this->SearchMemberBN->UseVisualStyleBackColor = false;
+			this->SearchMemberBN->Click += gcnew System::EventHandler(this, &Form1::SearchMemberBN_Click);
 			// 
 			// DisplaySalesBN
 			// 
@@ -407,6 +418,7 @@ namespace CppCLRWinFormsProject {
 			this->DisplaySalesBN->TabIndex = 13;
 			this->DisplaySalesBN->Text = L"Display Sales";
 			this->DisplaySalesBN->UseVisualStyleBackColor = false;
+			this->DisplaySalesBN->Click += gcnew System::EventHandler(this, &Form1::DisplaySalesBN_Click);
 			// 
 			// DisplayMembersBN
 			// 
@@ -421,6 +433,7 @@ namespace CppCLRWinFormsProject {
 			this->DisplayMembersBN->TabIndex = 12;
 			this->DisplayMembersBN->Text = L"Display Members";
 			this->DisplayMembersBN->UseVisualStyleBackColor = false;
+			this->DisplayMembersBN->Click += gcnew System::EventHandler(this, &Form1::DisplayMembersBN_Click);
 			// 
 			// textBox2
 			// 
@@ -458,6 +471,20 @@ namespace CppCLRWinFormsProject {
 			this->textBox3->Size = System::Drawing::Size(1225, 571);
 			this->textBox3->TabIndex = 23;
 			// 
+			// DisplaySalesTB2
+			// 
+			this->DisplaySalesTB2->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->DisplaySalesTB2->Cursor = System::Windows::Forms::Cursors::Default;
+			this->DisplaySalesTB2->Enabled = false;
+			this->DisplaySalesTB2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->DisplaySalesTB2->Location = System::Drawing::Point(180, 153);
+			this->DisplaySalesTB2->Multiline = true;
+			this->DisplaySalesTB2->Name = L"DisplaySalesTB2";
+			this->DisplaySalesTB2->Size = System::Drawing::Size(912, 305);
+			this->DisplaySalesTB2->TabIndex = 41;
+			this->DisplaySalesTB2->Text = L"Current Sales:\r\n";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -466,9 +493,10 @@ namespace CppCLRWinFormsProject {
 			this->Controls->Add(this->RemoveMemberTB);
 			this->Controls->Add(this->RemoveMemberLabel2);
 			this->Controls->Add(this->RemoveMemberLabel1);
-			this->Controls->Add(this->DisplaySalesTB);
-			this->Controls->Add(this->DisplayMembersTB);
-			this->Controls->Add(this->DisplayMembersOrSalesLabel);
+			this->Controls->Add(this->DisplaySalesTB1);
+			this->Controls->Add(this->DisplaySalesTB2);
+			this->Controls->Add(this->DisplayMembersTB2);
+			this->Controls->Add(this->DisplayMembersTB1);
 			this->Controls->Add(this->DateOfBirthTB);
 			this->Controls->Add(this->IDTB);
 			this->Controls->Add(this->AgeTB);
@@ -499,5 +527,109 @@ namespace CppCLRWinFormsProject {
 
 		}
 #pragma endregion
-	};
+	private: System::Void SearchMemberBN_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->RemoveMemberLabel1->Visible == false;  //Remove Member
+		this->RemoveMemberLabel2->Visible == false;
+		this->RemoveMemberTB->Visible == false;
+		this->DisplaySalesTB1->Visible == false;     //Current Sales
+		this->DisplaySalesTB2->Visible == false;
+		this->DisplayMembersTB1->Visible == false;   //Current Members
+		this->DisplayMembersTB2->Visible == false;
+		this->EnterNewMemberLabel->Visible == false; //Enter New Member
+		this->label2->Visible == false;
+		this->FirstNameTB->Visible == false;
+		this->label3->Visible == false;
+		this->SecondNameTB->Visible == false;
+		this->label4->Visible == false;
+		this->AgeTB->Visible == false;
+		this->label6->Visible == false;
+		this->IDTB->Visible == false;
+		this->label5->Visible == false;
+		this->DateOfBirthTB->Visible == false;
+	}
+	private: System::Void DisplayMembersBN_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->RemoveMemberLabel1->Visible == false;  //Remove Member
+		this->RemoveMemberLabel2->Visible == false;
+		this->RemoveMemberTB->Visible == false;
+		this->DisplaySalesTB1->Visible == false;     //Current Sales
+		this->DisplaySalesTB2->Visible == false;
+		this->DisplayMembersTB1->Visible == true;   //Current Members
+		this->DisplayMembersTB2->Visible == true;
+		this->EnterNewMemberLabel->Visible == false; //Enter New Member
+		this->label2->Visible == false;
+		this->FirstNameTB->Visible == false;
+		this->label3->Visible == false;
+		this->SecondNameTB->Visible == false;
+		this->label4->Visible == false;
+		this->AgeTB->Visible == false;
+		this->label6->Visible == false;
+		this->IDTB->Visible == false;
+		this->label5->Visible == false;
+		this->DateOfBirthTB->Visible == false;
+	}
+
+	private: System::Void DisplaySalesBN_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->RemoveMemberLabel1->Visible == false;  //Remove Member
+		this->RemoveMemberLabel2->Visible == false;
+		this->RemoveMemberTB->Visible == false;
+		this->DisplaySalesTB1->Visible == true;     //Current Sales
+		this->DisplaySalesTB2->Visible == true;
+		this->DisplayMembersTB1->Visible == false;   //Current Members
+		this->DisplayMembersTB2->Visible == false;
+		this->EnterNewMemberLabel->Visible == false; //Enter New Member
+		this->label2->Visible == false;
+		this->FirstNameTB->Visible == false;
+		this->label3->Visible == false;
+		this->SecondNameTB->Visible == false;
+		this->label4->Visible == false;
+		this->AgeTB->Visible == false;
+		this->label6->Visible == false;
+		this->IDTB->Visible == false;
+		this->label5->Visible == false;
+		this->DateOfBirthTB->Visible == false;
+	}
+	private: System::Void AddMemberBN_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->RemoveMemberLabel1->Visible == false;  //Remove Member
+		this->RemoveMemberLabel2->Visible == false;
+		this->RemoveMemberTB->Visible == false;
+		this->DisplaySalesTB1->Visible == false;     //Current Sales
+		this->DisplaySalesTB2->Visible == false;
+		this->DisplayMembersTB1->Visible == false;   //Current Members
+		this->DisplayMembersTB2->Visible == false;
+		this->EnterNewMemberLabel->Visible == true; //Enter New Member
+		this->label2->Visible == true;
+		this->FirstNameTB->Visible == true;
+		this->label3->Visible == true;
+		this->SecondNameTB->Visible == true;
+		this->label4->Visible == true;
+		this->AgeTB->Visible == true;
+		this->label6->Visible == true;
+		this->IDTB->Visible == true;
+		this->label5->Visible == true;
+		this->DateOfBirthTB->Visible == true;
+	}
+	private: System::Void RemoveMemberBN_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->RemoveMemberLabel1->Visible == true;  //Remove Member
+		this->RemoveMemberLabel2->Visible == true;
+		this->RemoveMemberTB->Visible == false;
+		this->DisplaySalesTB1->Visible == false;     //Current Sales
+		this->DisplaySalesTB2->Visible == false;
+		this->DisplayMembersTB1->Visible == false;   //Current Members
+		this->DisplayMembersTB2->Visible == false;
+		this->EnterNewMemberLabel->Visible == false; //Enter New Member
+		this->label2->Visible == false;
+		this->FirstNameTB->Visible == false;
+		this->label3->Visible == false;
+		this->SecondNameTB->Visible == false;
+		this->label4->Visible == false;
+		this->AgeTB->Visible == false;
+		this->label6->Visible == false;
+		this->IDTB->Visible == false;
+		this->label5->Visible == false;
+		this->DateOfBirthTB->Visible == false;
+	}
+	private: System::Void ExitBN_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+	}
+};
 }
