@@ -1,5 +1,0 @@
-﻿  BaseData.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-CppCLR_WinFormsProject.obj : error LNK2005: main already defined in Main.obj
-CppCLR_WinFormsProject.obj : error LNK2005: "int __cdecl main(void)" (?main@@$$HYAHXZ) already defined in Main.obj
-CppCLR_WinFormsProject.obj : error LNK2022: metadata operation failed (80131195) : Custom attributes are not consistent: (0x0c000008).
-LINK : fatal error LNK1255: link failed because of metadata errors
