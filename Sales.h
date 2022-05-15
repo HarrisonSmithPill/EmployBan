@@ -23,4 +23,3 @@ public:
 	int change_price(float x);
 	string change_data(string x);
 };
-

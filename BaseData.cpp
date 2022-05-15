@@ -116,3 +116,29 @@ void BaseData::Dispaly_sales()
 		fsales[i].display();
 	}
 }
+
+string BaseData::Get_sale_name(int index)
+{
+	return fsales[index].getName();
+}
+
+float BaseData::Get_sale_price(int index)
+{
+	return fsales[index].getPrice();
+}
+
+string BaseData::Get_sale_dob(int index)
+{
+	return fsales[index].getDate();
+}
+
+vector<Sales> BaseData::Get_sales_list()
+{
+	return fsales;
+}
+
+Sales BaseData::Get_sales(int index)
+{
+	return fsales[index];
+}
+
