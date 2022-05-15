@@ -1,0 +1,4 @@
+H:\Documents\Software Projects\Base program\Base program\x64\Debug\Base program.vcxproj.AssemblyReference.cache
+H:\Documents\Software Projects\Base program\Base program\x64\Debug\Base program.vcxproj.SuggestedBindingRedirects.cache
+H:\Documents\Software Projects\Base program\Base program\x64\Debug\Base_program.Form1.resources
+H:\Documents\Software Projects\Base program\Base program\x64\Debug\Base program.vcxproj.GenerateResource.cache
