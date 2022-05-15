@@ -25,15 +25,27 @@ string Sales::change_object_name(string x)
 	fobject_name = x;
 	return fobject_name;
 }
+string Sales::getName()
+{
+	return fobject_name;
+}
 
 int Sales::change_price(float x)
 {
 	fprice = x;
 	return fprice;
 }
+int Sales::getPrice()
+{
+	return fprice;
+}
 
 string Sales::change_data(string x)
 {
 	fdate = x;
+	return fdate;
+}
+string Sales::getDate()
+{
 	return fdate;
 }

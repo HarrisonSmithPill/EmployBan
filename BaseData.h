@@ -17,8 +17,8 @@ private:
 	vector<Sales> fsales;
 public:
 
-	BaseData(int id, string Fname, string Sname, int age, string dob);                                
-	        
+	BaseData(int id, string Fname, string Sname, int age, string dob);
+
 
 	const int getAge() const;
 	const int getID() const;
@@ -37,6 +37,6 @@ public:
 	void display();
 
 	void insertProduct(std::string fproduct);
-	void Add_Sales(string name,float price, string date);
+	void Add_Sales(string name, float price, string date);
 	void Dispaly_sales();
 };

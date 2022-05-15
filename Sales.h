@@ -15,7 +15,9 @@ public:
 
 
 	void display();
-
+	string getName();
+	int getPrice();
+	string getDate();
 
 	string change_object_name(string x);
 	int change_price(float x);

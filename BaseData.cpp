@@ -4,8 +4,7 @@ using namespace std;
 #include<iostream>
 
 BaseData::BaseData(int id, string Fname, string Sname, int age, string dob) :
-	fAge(19),
-	fID(10),
+	fID(),
 	OrderSelect(0),
 	OrderType(0),
 	listSize(0)
@@ -13,6 +12,7 @@ BaseData::BaseData(int id, string Fname, string Sname, int age, string dob) :
 	fID = id;
 	fFName = Fname;
 	fSName = Sname;
+	fAge = age;
 	fDOB = dob;
 	fHList[listSize];
 }
