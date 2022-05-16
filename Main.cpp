@@ -41,7 +41,8 @@ int main() {
 		cout << "6. edit member" << endl;
 		cout << "7. add sales" << endl;
 		cout << "8. remove member" << endl;
-		cout << "9. exit" << endl;
+		cout << "9. Print csv" << endl;
+		cout << "10. exit" << endl;
 		cout << "="<<setfill('=')<< setw(100) << "=" << setfill(' ') << endl;
 		cout << "Choise the option by typing the number blow" << endl;
 		cin >> option;
@@ -283,7 +284,11 @@ int main() {
 			
 			//cout << members.size() << endl;
 			break;
-		case 9:
+			case 9:
+			create(members);)
+			cout << "COMPLETE" << endl;
+			break;
+		case 10:
 			exit = 1;
 			cout << "Have a nice day!" << endl;
 			cout << "="<<setfill('=')<< setw(100) << "=" << setfill(' ') << endl;
