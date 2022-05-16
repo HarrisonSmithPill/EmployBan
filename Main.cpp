@@ -23,7 +23,7 @@ int main() {
 	BaseData tmember(-1, "test", "test", 0, "test");
 	vector<BaseData> members = { add_member, add_member2 };
 	members[1].Add_Sales("apple", 4.95, "4/3/2022");
-	members[1].Add_Sales("blue", 4.95, "4/3/2022");
+	members[0].Add_Sales("blue", 4.95, "4/3/2022");
 	//Member*  members[2] = { add_member, add_member2 };               
 	//change to vecter
 	//add_member->display();
@@ -366,5 +366,67 @@ int main() {
 	cout << "=========================" << endl;
 	cout << "=========================" << endl;
 	*/
+//////////////////////////////////////////////////////////////////////////////////////////////////
+void create(vector<BaseData> members)
+{
+    // file pointer
+    fstream fout;
+
+    // opens an existing csv file or creates a new file.
+    fout.open("member_data.csv", ios::out | ios::app);
+    for (int i = 0; i < members.size(); i++)
+    {
+        fout << members[i].getID() << ", "
+            << members[i].getFName() << ", "
+            << members[i].getSName() << ", "
+            << members[i].getAge() << ", "
+            << members[i].getDOB() << ", "
+            << members[i].Get_sale_name(0) << ", "
+            << members[i].Get_sale_price(0) << ", "
+            << members[i].Get_sale_dob(0) << ", "
+            << "\n";
+    }
+
+
+    
+}
+
+void read_record()
+{
+
+    // File pointer
+    fstream fin;
+
+    // Open an existing file
+    fin.open("member_data.csv", ios::in);
+
+    // Get the roll number
+    // of which the data is required
+    int rollnum, roll2, count = 0;
+
+
+    // Read the Data from the file
+    // as String Vector
+    vector<string> row;
+    string line, word, temp;
+
+        // convert string to integer for comparision
+        roll2 = stoi(row[0]);
+
+        // Compare the roll number
+
+            // Print the found data
+            count = 1;
+            cout << row[0] << " : \n";
+            cout <<  row[1] << "\n";
+            cout << row[2] << "\n";
+            cout <<  row[3] << "\n";
+            cout <<  row[4] << "\n";
+            cout <<  row[5] << "\n";
+            
+       
+
+}
+///////////////////////////////////////////////////////////////////////////////////////////////
 	return 0;
 }
