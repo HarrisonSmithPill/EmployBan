@@ -284,8 +284,8 @@ int main() {
 			
 			//cout << members.size() << endl;
 			break;
-			case 9:
-			create(members);)
+		case 9:
+			create(members);
 			cout << "COMPLETE" << endl;
 			break;
 		case 10:
