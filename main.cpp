@@ -99,6 +99,11 @@ int main()
     members[1].Add_Sales("apple", 4.95, "4/3/2022");
     members[1].Add_Sales("blue", 4.95, "4/3/2022");
     create(members);
+    if(members[1] !== member1)
+    {
+         cout << "error, in information" << endl;
+        return 0;
+    }
     read_record();
     cout << "done" << endl;
     return 0;
