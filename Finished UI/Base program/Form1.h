@@ -140,6 +140,16 @@ private: System::Windows::Forms::TextBox^ YourOrderTB;
 private: System::Windows::Forms::TextBox^ YourOrderTB2;
 private: System::Windows::Forms::Button^ ContinueBN;
 private: System::Windows::Forms::Button^ FinishedBN;
+private: System::Windows::Forms::NumericUpDown^ AlertValues;
+private: System::Windows::Forms::Button^ AlertsBN;
+private: System::Windows::Forms::TextBox^ AlertsTB1;
+private: System::Windows::Forms::Label^ AlertsLabel1;
+
+
+
+private: System::Windows::Forms::MonthCalendar^ AlertsCalender;
+private: System::Windows::Forms::Button^ ClearOrdersBN;
+private: System::Windows::Forms::TextBox^ AlertsTB2;
 
 
 
@@ -217,12 +227,20 @@ private: System::Windows::Forms::Button^ FinishedBN;
 			this->YourOrderTB2 = (gcnew System::Windows::Forms::TextBox());
 			this->ContinueBN = (gcnew System::Windows::Forms::Button());
 			this->FinishedBN = (gcnew System::Windows::Forms::Button());
+			this->AlertValues = (gcnew System::Windows::Forms::NumericUpDown());
+			this->AlertsBN = (gcnew System::Windows::Forms::Button());
+			this->AlertsTB1 = (gcnew System::Windows::Forms::TextBox());
+			this->AlertsLabel1 = (gcnew System::Windows::Forms::Label());
+			this->AlertsCalender = (gcnew System::Windows::Forms::MonthCalendar());
+			this->ClearOrdersBN = (gcnew System::Windows::Forms::Button());
+			this->AlertsTB2 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MilkValue))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EggValue))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BreadValue))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DrinksValue))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MeatValue))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->SweetsValue))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AlertValues))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// RemoveMemberTB
@@ -273,7 +291,8 @@ private: System::Windows::Forms::Button^ FinishedBN;
 			this->DisplaySalesTB2->Name = L"DisplaySalesTB2";
 			this->DisplaySalesTB2->Size = System::Drawing::Size(911, 273);
 			this->DisplaySalesTB2->TabIndex = 67;
-			this->DisplaySalesTB2->Text = L"Member: John Doe\r\nItems: Milk, Eggs, Bread, etc.";
+			this->DisplaySalesTB2->Text = L"Member: John Doe\r\nPrice: $25.60\r\nItems:\r\nFull Cream Milk, 1\r\n12 700g Eggs, 1\r\nWhi"
+				L"te Bread Loaf, 2";
 			this->DisplaySalesTB2->Visible = false;
 			// 
 			// DisplaySalesTB1
@@ -938,7 +957,8 @@ private: System::Windows::Forms::Button^ FinishedBN;
 			this->YourOrderTB2->Name = L"YourOrderTB2";
 			this->YourOrderTB2->Size = System::Drawing::Size(502, 297);
 			this->YourOrderTB2->TabIndex = 80;
-			this->YourOrderTB2->Text = L"ID: 10\r\nItems:\r\nFull Cream Milk 1L, 2\r\n12 700g Eggs, 1\r\nWhite Bread Loaf, 2";
+			this->YourOrderTB2->Text = L"ID: 10\r\nName: John Doe\r\nPrice: $25.60\r\nItems:\r\nFull Cream Milk 1L, 2\r\n12 700g Egg"
+				L"s, 1\r\nWhite Bread Loaf, 2\r\n";
 			this->YourOrderTB2->Visible = false;
 			// 
 			// ContinueBN
@@ -973,11 +993,106 @@ private: System::Windows::Forms::Button^ FinishedBN;
 			this->FinishedBN->Visible = false;
 			this->FinishedBN->Click += gcnew System::EventHandler(this, &Form1::FinishedBN_Click);
 			// 
+			// AlertValues
+			// 
+			this->AlertValues->Enabled = false;
+			this->AlertValues->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AlertValues->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->AlertValues->Location = System::Drawing::Point(1034, 126);
+			this->AlertValues->Name = L"AlertValues";
+			this->AlertValues->ReadOnly = true;
+			this->AlertValues->Size = System::Drawing::Size(30, 26);
+			this->AlertValues->TabIndex = 82;
+			this->AlertValues->UseWaitCursor = true;
+			this->AlertValues->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			// 
+			// AlertsBN
+			// 
+			this->AlertsBN->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
+			this->AlertsBN->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->AlertsBN->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AlertsBN->Location = System::Drawing::Point(953, 126);
+			this->AlertsBN->Name = L"AlertsBN";
+			this->AlertsBN->Size = System::Drawing::Size(75, 26);
+			this->AlertsBN->TabIndex = 83;
+			this->AlertsBN->Text = L"Alerts";
+			this->AlertsBN->UseVisualStyleBackColor = false;
+			this->AlertsBN->Click += gcnew System::EventHandler(this, &Form1::AlertsBN_Click);
+			// 
+			// AlertsTB1
+			// 
+			this->AlertsTB1->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->AlertsTB1->Cursor = System::Windows::Forms::Cursors::Default;
+			this->AlertsTB1->Enabled = false;
+			this->AlertsTB1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AlertsTB1->Location = System::Drawing::Point(179, 159);
+			this->AlertsTB1->Multiline = true;
+			this->AlertsTB1->Name = L"AlertsTB1";
+			this->AlertsTB1->Size = System::Drawing::Size(913, 337);
+			this->AlertsTB1->TabIndex = 84;
+			this->AlertsTB1->Text = L"Alerts:";
+			this->AlertsTB1->Visible = false;
+			// 
+			// AlertsLabel1
+			// 
+			this->AlertsLabel1->AutoSize = true;
+			this->AlertsLabel1->Enabled = false;
+			this->AlertsLabel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AlertsLabel1->Location = System::Drawing::Point(202, 205);
+			this->AlertsLabel1->Name = L"AlertsLabel1";
+			this->AlertsLabel1->Size = System::Drawing::Size(137, 20);
+			this->AlertsLabel1->TabIndex = 85;
+			this->AlertsLabel1->Text = L"Alerts for today:";
+			this->AlertsLabel1->Visible = false;
+			// 
+			// AlertsCalender
+			// 
+			this->AlertsCalender->Location = System::Drawing::Point(857, 168);
+			this->AlertsCalender->Name = L"AlertsCalender";
+			this->AlertsCalender->TabIndex = 87;
+			this->AlertsCalender->Visible = false;
+			this->AlertsCalender->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &Form1::AlertsCalender_DateChanged);
+			// 
+			// ClearOrdersBN
+			// 
+			this->ClearOrdersBN->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ClearOrdersBN->Location = System::Drawing::Point(446, 197);
+			this->ClearOrdersBN->Name = L"ClearOrdersBN";
+			this->ClearOrdersBN->Size = System::Drawing::Size(190, 36);
+			this->ClearOrdersBN->TabIndex = 88;
+			this->ClearOrdersBN->Text = L"Clear Orders";
+			this->ClearOrdersBN->UseVisualStyleBackColor = true;
+			this->ClearOrdersBN->Visible = false;
+			this->ClearOrdersBN->Click += gcnew System::EventHandler(this, &Form1::ClearOrdersBN_Click);
+			// 
+			// AlertsTB2
+			// 
+			this->AlertsTB2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AlertsTB2->Location = System::Drawing::Point(206, 244);
+			this->AlertsTB2->Multiline = true;
+			this->AlertsTB2->Name = L"AlertsTB2";
+			this->AlertsTB2->Size = System::Drawing::Size(639, 194);
+			this->AlertsTB2->TabIndex = 89;
+			this->AlertsTB2->Visible = false;
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1210, 568);
+			this->Controls->Add(this->AlertsTB2);
+			this->Controls->Add(this->ClearOrdersBN);
+			this->Controls->Add(this->AlertsCalender);
+			this->Controls->Add(this->AlertsLabel1);
+			this->Controls->Add(this->AlertsTB1);
+			this->Controls->Add(this->AlertsBN);
+			this->Controls->Add(this->AlertValues);
 			this->Controls->Add(this->FinishedBN);
 			this->Controls->Add(this->ContinueBN);
 			this->Controls->Add(this->YourOrderTB2);
@@ -1044,6 +1159,7 @@ private: System::Windows::Forms::Button^ FinishedBN;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DrinksValue))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MeatValue))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->SweetsValue))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AlertValues))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1069,6 +1185,34 @@ private: System::Void SearchMemberBN_Click_1(System::Object^ sender, System::Eve
 	this->IDTB->Visible = false;
 	this->label5->Visible = false;
 	this->DateOfBirthTB->Visible = false;
+	this->AddSaleLabel2->Visible = false;
+	this->AddSaleLabel3->Visible = false;
+	this->AddSaleLabel4->Visible = false;
+	this->AddSaleLabel5->Visible = false;
+	this->AddSaleLabel6->Visible = false;
+	this->AddSaleLabel7->Visible = false;
+	this->AddSaleLabel8->Visible = false;
+	this->ComboBox1->Visible = false;
+	this->ComboBox2->Visible = false;
+	this->ComboBox3->Visible = false;
+	this->ComboBox4->Visible = false;
+	this->ComboBox5->Visible = false;
+	this->ComboBox6->Visible = false;
+	this->MilkValue->Visible = false;
+	this->EggValue->Visible = false;
+	this->BreadValue->Visible = false;
+	this->DrinksValue->Visible = false;
+	this->MeatValue->Visible = false;
+	this->SweetsValue->Visible = false;
+	this->SalesIDTB->Visible = false;
+	this->AddToCartBN->Visible = false;
+	this->ViewCartBN->Visible = false;
+	this->AddSaleLabel1->Visible = false;
+	this->AlertsCalender->Visible = false;
+	this->AlertsTB2->Visible = false;
+	this->AlertsTB1->Visible = false;
+	this->ClearOrdersBN->Visible = false;
+	this->AlertsLabel1->Visible = false;
 }
 
 private: System::Void AddSalesBN_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1113,6 +1257,11 @@ private: System::Void AddSalesBN_Click(System::Object^ sender, System::EventArgs
 	this->AddToCartBN->Visible = true;
 	this->ViewCartBN->Visible = true;
 	this->AddSaleLabel1->Visible = true;
+	this->AlertsCalender->Visible = false;
+	this->AlertsTB2->Visible = false;
+	this->AlertsTB1->Visible = false;
+	this->ClearOrdersBN->Visible = false;
+	this->AlertsLabel1->Visible = false;
 }
 private: System::Void DisplayMembersBN_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	this->RemoveMemberLabel1->Visible = false;  //Remove Member
@@ -1133,6 +1282,34 @@ private: System::Void DisplayMembersBN_Click_1(System::Object^ sender, System::E
 	this->IDTB->Visible = false;
 	this->label5->Visible = false;
 	this->DateOfBirthTB->Visible = false;
+	this->AddSaleLabel2->Visible = false;
+	this->AddSaleLabel3->Visible = false;
+	this->AddSaleLabel4->Visible = false;
+	this->AddSaleLabel5->Visible = false;
+	this->AddSaleLabel6->Visible = false;
+	this->AddSaleLabel7->Visible = false;
+	this->AddSaleLabel8->Visible = false;
+	this->ComboBox1->Visible = false;
+	this->ComboBox2->Visible = false;
+	this->ComboBox3->Visible = false;
+	this->ComboBox4->Visible = false;
+	this->ComboBox5->Visible = false;
+	this->ComboBox6->Visible = false;
+	this->MilkValue->Visible = false;
+	this->EggValue->Visible = false;
+	this->BreadValue->Visible = false;
+	this->DrinksValue->Visible = false;
+	this->MeatValue->Visible = false;
+	this->SweetsValue->Visible = false;
+	this->SalesIDTB->Visible = false;
+	this->AddToCartBN->Visible = false;
+	this->ViewCartBN->Visible = false;
+	this->AddSaleLabel1->Visible = false;
+	this->AlertsCalender->Visible = false;
+	this->AlertsTB2->Visible = false;
+	this->AlertsTB1->Visible = false;
+	this->ClearOrdersBN->Visible = false;
+	this->AlertsLabel1->Visible = false;
 }
 private: System::Void DoneBN_Click(System::Object^ sender, System::EventArgs^ e) {
 	
@@ -1159,6 +1336,34 @@ private: System::Void DisplaySalesBN_Click(System::Object^ sender, System::Event
 	this->DateOfBirthTB->Visible = false;
 	this->DisplaySalesTB2->Visible = true;     //Current Sales
 	this->DisplaySalesTB1->Visible = true;
+	this->AddSaleLabel2->Visible = false;
+	this->AddSaleLabel3->Visible = false;
+	this->AddSaleLabel4->Visible = false;
+	this->AddSaleLabel5->Visible = false;
+	this->AddSaleLabel6->Visible = false;
+	this->AddSaleLabel7->Visible = false;
+	this->AddSaleLabel8->Visible = false;
+	this->ComboBox1->Visible = false;
+	this->ComboBox2->Visible = false;
+	this->ComboBox3->Visible = false;
+	this->ComboBox4->Visible = false;
+	this->ComboBox5->Visible = false;
+	this->ComboBox6->Visible = false;
+	this->MilkValue->Visible = false;
+	this->EggValue->Visible = false;
+	this->BreadValue->Visible = false;
+	this->DrinksValue->Visible = false;
+	this->MeatValue->Visible = false;
+	this->SweetsValue->Visible = false;
+	this->SalesIDTB->Visible = false;
+	this->AddToCartBN->Visible = false;
+	this->ViewCartBN->Visible = false;
+	this->AddSaleLabel1->Visible = false;
+	this->AlertsCalender->Visible = false;
+	this->AlertsTB2->Visible = false;
+	this->AlertsTB1->Visible = false;
+	this->ClearOrdersBN->Visible = false;
+	this->AlertsLabel1->Visible = false;
 }
 private: System::Void RemoveMemberBN_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->RemoveMemberTB->Visible = true;
@@ -1179,6 +1384,34 @@ private: System::Void RemoveMemberBN_Click(System::Object^ sender, System::Event
 	this->DateOfBirthTB->Visible = false;
 	this->DisplaySalesTB1->Visible = false;     //Current Sales
 	this->DisplaySalesTB2->Visible = false;
+	this->AddSaleLabel2->Visible = false;
+	this->AddSaleLabel3->Visible = false;
+	this->AddSaleLabel4->Visible = false;
+	this->AddSaleLabel5->Visible = false;
+	this->AddSaleLabel6->Visible = false;
+	this->AddSaleLabel7->Visible = false;
+	this->AddSaleLabel8->Visible = false;
+	this->ComboBox1->Visible = false;
+	this->ComboBox2->Visible = false;
+	this->ComboBox3->Visible = false;
+	this->ComboBox4->Visible = false;
+	this->ComboBox5->Visible = false;
+	this->ComboBox6->Visible = false;
+	this->MilkValue->Visible = false;
+	this->EggValue->Visible = false;
+	this->BreadValue->Visible = false;
+	this->DrinksValue->Visible = false;
+	this->MeatValue->Visible = false;
+	this->SweetsValue->Visible = false;
+	this->SalesIDTB->Visible = false;
+	this->AddToCartBN->Visible = false;
+	this->ViewCartBN->Visible = false;
+	this->AddSaleLabel1->Visible = false;
+	this->AlertsCalender->Visible = false;
+	this->AlertsTB2->Visible = false;
+	this->AlertsTB1->Visible = false;
+	this->ClearOrdersBN->Visible = false;
+	this->AlertsLabel1->Visible = false;
 }
 private: System::Void AddMemberBN_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->RemoveMemberLabel1->Visible = false;  //Remove Member
@@ -1199,6 +1432,11 @@ private: System::Void AddMemberBN_Click(System::Object^ sender, System::EventArg
 	this->IDTB->Visible = true;
 	this->label5->Visible = true;
 	this->DateOfBirthTB->Visible = true;
+	this->AlertsCalender->Visible = false;
+	this->AlertsTB2->Visible = false;
+	this->AlertsTB1->Visible = false;
+	this->ClearOrdersBN->Visible = false;
+	this->AlertsLabel1->Visible = false;
 	this->FirstNameTB->Text = L"";
 	this->SecondNameTB->Text = L"";
 	this->AgeTB->Text = L"";
@@ -1225,6 +1463,35 @@ private: System::Void EditMemberBN_Click(System::Object^ sender, System::EventAr
 	this->IDTB->Visible = true;
 	this->label5->Visible = true;
 	this->DateOfBirthTB->Visible = true;
+	this->AddSaleLabel2->Visible = false;
+	this->AddSaleLabel3->Visible = false;
+	this->AddSaleLabel4->Visible = false;
+	this->AddSaleLabel5->Visible = false;
+	this->AddSaleLabel6->Visible = false;
+	this->AddSaleLabel7->Visible = false;
+	this->AddSaleLabel8->Visible = false;
+	this->ComboBox1->Visible = false;
+	this->ComboBox2->Visible = false;
+	this->ComboBox3->Visible = false;
+	this->ComboBox4->Visible = false;
+	this->ComboBox5->Visible = false;
+	this->ComboBox6->Visible = false;
+	this->MilkValue->Visible = false;
+	this->EggValue->Visible = false;
+	this->BreadValue->Visible = false;
+	this->DrinksValue->Visible = false;
+	this->MeatValue->Visible = false;
+	this->SweetsValue->Visible = false;
+	this->SalesIDTB->Visible = false;
+	this->AddToCartBN->Visible = false;
+	this->ViewCartBN->Visible = false;
+	this->AddSaleLabel1->Visible = false;
+	this->AlertsCalender->Visible = false;
+	this->AlertsTB2->Visible = false;
+	this->AlertsTB1->Visible = false;
+	this->ClearOrdersBN->Visible = false;
+	this->AlertsLabel1->Visible = false;
+
 	this->FirstNameTB->Text = L"";
 	this->SecondNameTB->Text = L"";
 	this->AgeTB->Text = L"";
@@ -1373,6 +1640,23 @@ private: System::Void FinishedBN_Click(System::Object^ sender, System::EventArgs
 	this->AddToCartBN->Visible = true;
 	this->ViewCartBN->Visible = true;
 	this->AddSaleLabel1->Visible = true;
+}
+private: System::Void AlertsBN_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->AlertsCalender->Visible = true;
+	this->ClearOrdersBN->Visible = true;
+	this->AlertsLabel1->Visible = true;
+	this->AlertsTB2->Visible = true;
+	this->AlertsTB1->Visible = true;
+}
+private: System::Void ClearOrdersBN_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->AlertsTB2->Text = L" ";
+}
+private: System::Void AlertsCalender_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
+	this->AlertsTB2->Text = L"18/5/22, John Doe, $25.60";
+
+	//if AlertsCalender_DateChanged == AlertsCalender_TodaysDate {
+	// this->AlertsTB2->Text = L"18/5/22, John Doe, $25.60";
+	//}
 }
 };
 };
